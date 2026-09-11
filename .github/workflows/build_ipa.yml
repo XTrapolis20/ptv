@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: myapp
 
     steps:
       - name: Checkout repository
@@ -46,4 +49,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ios-ipa
-          path: output/myapp.ipa
+          path: myapp/output/myapp.ipa
